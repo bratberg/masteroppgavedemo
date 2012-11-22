@@ -10,7 +10,7 @@ namespace masteroppgavedemo.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "MASTEROPPGAVEDEMO";
+            ViewBag.Message = "";
 
             return View();
         }
