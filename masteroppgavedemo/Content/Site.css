@@ -15,16 +15,18 @@ body {
 }
 
 a {
-    color: #333;
+    color: #5cb7d9;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
-    text-decoration: underline;
+    text-decoration: none;
+    font-style:oblique;
+    font-weight: bold;
 }
 
     a:link, a:visited,
     a:active, a:hover {
-        color: #333;
+        color: #5cb7d9;
     }
 
     a:hover {

@@ -5,34 +5,159 @@
             document.addEventListener("DOMContentLoaded", function () {
 
                 // create our popcorn instance
-                var pop = Popcorn.youtube("#youtube", "http://www.youtube.com/watch?v=Phr_DF4eoYE");
+                var pop = Popcorn.youtube("#youtube", "http://www.youtube.com/watch?v=7_LPdttKXPc&");
 
                 pop.footnote({
-                    start: 1,
-                    end: 100,
-                    text: "Youtube working!<br />",
+                    start: 2,
+                    end: 288,
+                    text: '00:02 - so how does the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> work<br />',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 4,
-                    end: 100,
-                    text: "Youtube working again!",
+                    end: 288,
+                    text: '00:04 - most of us know how to use the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> without actually understanding how it<br />',
                     target: "footnote"
                 });
 
                 pop.footnote({
-                    start: 7,
-                    end: 100,
-                    text: "Youtube working yet again!",
+                    start: 8,
+                    end: 288,
+                    text: '00:08 - works sort of like <a href="http://en.wikipedia.org/wiki/Electricity">electricity</a> in your home<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 10,
+                    end: 288,
+                    text: '00:10 - you use that every day but may not understand the <a href="http://en.wikipedia.org/wiki/Mechanics">mechanics</a> behind it<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 15,
+                    end: 288,
+                    text: '00:15 - and if the electric grid is difficult to understand in the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> must be<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 18,
+                    end: 288,
+                    text: '00:18 - impossible right<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 21,
+                    end: 288,
+                    text: '00:21 - in the next few minutes i\'ll put you in the top ten percent of people who<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 25,
+                    end: 288,
+                    text: '00:25 - understand how the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> actually works<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 27,
+                    end: 288,
+                    text: '00:27 - for security catalyst dot com<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 29,
+                    end: 288,
+                    text: '00:29 - i\'m erin titus<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 32,
+                    end: 288,
+                    text: '00:32 - whenever most people think of the internet this is what comes to mind<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 36,
+                    end: 288,
+                    text: '00:36 - the internet is not a bubble cloud<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 39,
+                    end: 288,
+                    text: '00:39 - even in the new age of cloud computing<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 41,
+                    end: 288,
+                    text: '00:41 - the whole fuzzy cloud picture was created by people more concerned about<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 44,
+                    end: 288,
+                    text: '00:44 - job security<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 45,
+                    end: 288,
+                    text: '00:45 - than education<br />',
+                    target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 48,
+                    end: 288,
+                    text: '00:48 - this is the internet<br />',
                     target: "footnote"
                 });
 
                 pop.wikipedia({
-                    start: 1,
-                    end: 50,
-                    src: "http://en.wikipedia.org/wiki/Elearning",
-                    title: "E-learning",
+                    start: 3,
+                    end: 8,
+                    src: "http://en.wikipedia.org/wiki/Internet",
+                    title: "Internet",
+                    target: "wikipedia",
+                    numberofwords: 58
+                });
+
+                pop.wikipedia({
+                    start: 9,
+                    end: 10,
+                    src: "http://en.wikipedia.org/wiki/Electricity",
+                    title: "Electricity",
+                    target: "wikipedia",
+                    numberofwords: 58
+                });
+
+                pop.wikipedia({
+                    start: 11,
+                    end: 15,
+                    src: "http://en.wikipedia.org/wiki/Mechanics",
+                    title: "Mechanics",
+                    target: "wikipedia",
+                    numberofwords: 58
+                });
+
+                pop.wikipedia({
+                    start: 16,
+                    end: 288,
+                    src: "http://en.wikipedia.org/wiki/Internet",
+                    title: "Internet",
                     target: "wikipedia",
                     numberofwords: 58
                 });
@@ -41,14 +166,14 @@
 
             }, false);
        </script>
-    <h2 style="width: 150px; color: #84b7f6">[ Video ]</h2>
+    <h2 style="width: 150px; color: #808080">Video</h2>
     <div id="youtube" style="width: 598px; height: 398px; border: 1px solid black; float: left; box-shadow: 10px 10px 15px #ddd; margin-bottom: 30px; margin-top:20px;"></div>
     <img src="Images/Wikipedia-Logo.png" alt="wikipedia logo" height="54" width="174" style="background-color: #ddd; margin-left: 100px; margin-bottom: 5px; margin-top: -57px;" />
     <div id="wikipedia" style=" width:298px; height:388px; border: 1px solid black; padding:10px; padding-top:0px; float:right; overflow:hidden; box-shadow: 10px 10px 15px #ddd;">
         
         <br />
     </div>
-    <h2 style="width: 150px; color: #84b7f6">[ Transcript ]</h2>
-    <div id="footnote" style="width:578px; height:319px; float:left; border: 1px solid black; padding: 10px; margin-top: 20px; box-shadow: 10px 10px 15px #ddd;"></div>​
+    <h2 style="width: 150px; color: #808080">Transcript</h2>
+    <div id="footnote" style="width:578px; height:319px; float:left; border: 1px solid black; padding: 10px; margin-top: 20px; box-shadow: 10px 10px 15px #ddd; overflow-y:scroll; "></div>​
     <img src="Images/Google-Maps-Logo.jpg" alt="google maps logo" height="54" width="174" style="margin-left: 110px; margin-bottom: 5px; margin-top: -42px;" />
     <div id="googlemaps" style="width:298px; height: 319px; border:1px solid black; float: left; padding: 10px; margin-left: 40px; box-shadow: 10px 10px 15px #ddd;"></div>
