@@ -1,128 +1,150 @@
 ﻿
 
  <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>
-        <script>
+ <script src="Scripts/EasyCaptions.js"></script>
+ <script src="Scripts/mootools-core-1.4.5-full-nocompat.js"></script>       
+    <h2 style="height: 35px; width: 100px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center;">Video</h2>
+    <video id="youtube" controls style="width: 598px; height: 398px; border: 1px solid #999; float: left; box-shadow: 10px 10px 15px #ddd; margin-bottom: 30px; margin-top:0px;">
+        <source src="Videos/video.mp4" type="video/mp4">
+    </video>
+    <h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Wikipedia</h2>
+    <div id="wikipedia" style=" width:298px; height:388px; border: 1px solid #999; padding:10px; padding-top:0px; float:right; overflow:hidden; box-shadow: 10px 10px 15px #ddd;">
+        
+        <br />
+    </div>
+    <h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; margin-top: 425px;">Transcript</h2>
+    <div id="footnote" style="width:578px; height:219px; float:left; border: 1px solid #999; padding: 10px; margin-top: 0px; box-shadow: 10px 10px 15px #ddd; overflow-y:scroll; "></div>​
+    <h2 style="height: 35px; width: 200px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Google Maps</h2>
+    <div id="googlemaps" style=" width:298px; height: 219px; border:1px solid #999; float: left; padding: 10px; margin-left: 40px; box-shadow: 10px 10px 15px #ddd; margin-top: -19px;"></div>
+
+<script>
             document.addEventListener("DOMContentLoaded", function () {
 
                 // create our popcorn instance
-                var pop = Popcorn.youtube("#youtube", "http://www.youtube.com/watch?v=7_LPdttKXPc&");
-
+                var pop = Popcorn('#youtube', {pauseOnLinkClicked:true});
+                
+                pop.webpage({
+                    start: 1,
+                    target: 'googlemaps',
+                    src: 'http://www.google.com/'
+                });
+                
                 pop.footnote({
                     start: 2,
                     end: 288,
-                    text: '00:02 - so how does the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> work<br />',
+                    text: '<span data-begin="2">00:02 - so how does the <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">internet</a> work</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 4,
                     end: 288,
-                    text: '00:04 - most of us know how to use the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> without actually understanding how it<br />',
+                    text: '<span data-begin="4">00:04 - most of us know how to use the <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">internet</a> without actually understanding how it</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 8,
                     end: 288,
-                    text: '00:08 - works sort of like <a href="http://en.wikipedia.org/wiki/Electricity">electricity</a> in your home<br />',
+                    text: '<span data-begin="8">00:08 - works sort of like <a href="http://en.wikipedia.org/wiki/Electricity" target="_blank">electricity</a> in your home</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 10,
                     end: 288,
-                    text: '00:10 - you use that every day but may not understand the <a href="http://en.wikipedia.org/wiki/Mechanics">mechanics</a> behind it<br />',
+                    text: '<span data-begin="10">00:10 - you use that every day but may not understand the <a href="http://en.wikipedia.org/wiki/Mechanics" target="_blank">mechanics</a> behind it</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 15,
                     end: 288,
-                    text: '00:15 - and if the electric grid is difficult to understand in the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> must be<br />',
+                    text: '<span data-begin="15">00:15 - and if the electric grid is difficult to understand in the <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">internet</a> must be</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 18,
                     end: 288,
-                    text: '00:18 - impossible right<br />',
+                    text: '<span data-begin="18">00:18 - impossible right</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 21,
                     end: 288,
-                    text: '00:21 - in the next few minutes i\'ll put you in the top ten percent of people who<br />',
+                    text: '<span data-begin="21">00:21 - in the next few minutes i\'ll put you in the top ten percent of people who</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 25,
                     end: 288,
-                    text: '00:25 - understand how the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> actually works<br />',
+                    text: '<span data-begin="25">00:25 - understand how the <a href="http://en.wikipedia.org/wiki/Internet">internet</a> actually works</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 27,
                     end: 288,
-                    text: '00:27 - for security catalyst dot com<br />',
+                    text: '<span data-begin="27">00:27 - for security catalyst dot com</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 29,
                     end: 288,
-                    text: '00:29 - i\'m erin titus<br />',
+                    text: '<span data-begin="29">00:29 - i\'m erin titus</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 32,
                     end: 288,
-                    text: '00:32 - whenever most people think of the internet this is what comes to mind<br />',
+                    text: '<span data-begin="32">00:32 - whenever most people think of the internet this is what comes to mind</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 36,
                     end: 288,
-                    text: '00:36 - the internet is not a bubble cloud<br />',
+                    text: '<span data-begin="36">00:36 - the internet is not a bubble cloud</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 39,
                     end: 288,
-                    text: '00:39 - even in the new age of cloud computing<br />',
+                    text: '<span data-begin="39">00:39 - even in the new age of cloud computing</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 41,
                     end: 288,
-                    text: '00:41 - the whole fuzzy cloud picture was created by people more concerned about<br />',
+                    text: '<span data-begin="41">00:41 - the whole fuzzy cloud picture was created by people more concerned about</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 44,
                     end: 288,
-                    text: '00:44 - job security<br />',
+                    text: '<span data-begin="44">00:44 - job security</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 45,
                     end: 288,
-                    text: '00:45 - than education<br />',
+                    text: '<span data-begin="45">00:45 - than education</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
                 pop.footnote({
                     start: 48,
                     end: 288,
-                    text: '00:48 - this is the internet<br />',
+                    text: '<span data-begin="48">00:48 - this is the internet</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
                 });
 
@@ -162,18 +184,25 @@
                     numberofwords: 100
                 });
 
-                pop.play();
-
             }, false);
+
+            var easy = new EasyCaptions({
+                videoElementID: "youtube",
+                transcriptElementID: "footnote"
+            });
+
+            (function () {
+                var element = document.getElementById("footnote");
+                var lastHeight = element.scrollHeight;
+                function detectChange() {
+                    var currentHeight = element.scrollHeight;
+                    if (lastHeight != currentHeight) {
+                        element.scrollTop = currentHeight;
+                        lastHeight = currentHeight;
+                    }
+                }
+                detectChange();
+                setInterval(detectChange, 200); //Checks each 200ms = 5 times a second
+            })();
+
        </script>
-    <h2 style="height: 35px; width: 100px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center;">Video</h2>
-    <div id="youtube" style="width: 598px; height: 398px; border: 1px solid black; float: left; box-shadow: 10px 10px 15px #ddd; margin-bottom: 30px; margin-top:0px;"></div>
-    <h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Wikipedia</h2>
-    <div id="wikipedia" style=" width:298px; height:388px; border: 1px solid black; padding:10px; padding-top:0px; float:right; overflow:hidden; box-shadow: 10px 10px 15px #ddd;">
-        
-        <br />
-    </div>
-    <h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; margin-top: 425px;">Transcript</h2>
-    <div id="footnote" style="width:578px; height:319px; float:left; border: 1px solid black; padding: 10px; margin-top: 0px; box-shadow: 10px 10px 15px #ddd; overflow-y:scroll; "></div>​
-    <h2 style="height: 35px; width: 200px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Google Maps</h2>
-    <div id="googlemaps" style="width:298px; height: 319px; border:1px solid black; float: left; padding: 10px; margin-left: 40px; box-shadow: 10px 10px 15px #ddd; margin-top: -19px;"></div>
