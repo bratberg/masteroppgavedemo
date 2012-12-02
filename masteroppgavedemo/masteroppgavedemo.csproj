@@ -229,7 +229,8 @@
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\Google-Maps-Logo.jpg" />
-    <Content Include="Images\video.mp4" />
+    <Content Include="Scripts\mootools-core-1.4.5-full-nocompat.js" />
+    <Content Include="Videos\video.mp4" />
     <Content Include="Images\wikipedia-logo.jpg" />
     <Content Include="Scripts\EasyCaptions.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
