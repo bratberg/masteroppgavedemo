@@ -1,26 +1,23 @@
 ﻿
-
+ <script src="Scripts/jquery-1.7.1.js"></script>
  <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>
  <script src="Scripts/EasyCaptions.js"></script>
- <script src="Scripts/mootools-core-1.4.5-full-nocompat.js"></script>       
+ <script src="Scripts/mootools-core-1.4.5-full-nocompat.js"></script>
+ <script src="Scripts/jquery.dynacloud-5.js"></script>       
     <h2 style="height: 35px; width: 100px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center;">Video</h2>
     <video id="youtube" autobuffer controls style="width: 598px; height: 398px; border: 1px solid #999; float: left; box-shadow: 10px 10px 15px #ddd; margin-bottom: 30px; margin-top:0px;">
         <source src="Videos/video.mp4" type="video/mp4">
     </video>
     <h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Wikipedia</h2>
-    <div id="wikipedia" style=" width:298px; height:388px; border: 1px solid #999; padding:10px; padding-top:0px; float:right; overflow:hidden; box-shadow: 10px 10px 15px #ddd;">
-        
-        <br />
-    </div>
+    <div id="wikipedia" style=" width:298px; height:388px; border: 1px solid #999; padding:10px; padding-top:0px; float:right; overflow:hidden; box-shadow: 10px 10px 15px #ddd;"></div>
     <div style="width:150px;"><h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; margin-top: 425px;">Transcript</h2></div>
     <div id="footnote" style="width:578px; height:219px; float:left; border: 1px solid #999; padding: 10px; margin-top: 0px; box-shadow: 10px 10px 15px #ddd; overflow-y:scroll; "></div>​
-    <h2 style="height: 35px; width: 200px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Google Maps</h2>
-    <div id="googlemaps" style=" width:298px; height: 219px; border:1px solid #999; float: left; padding: 10px; margin-left: 40px; box-shadow: 10px 10px 15px #ddd; margin-top: -19px;"></div>
-    <h2 style="width:578px; margin-top: 230px; font-size: 14px; color: #888; text-align: center;">( click to jump back )</h2>
+    <h2 style="height: 35px; width: 150px; color: #808080; background-color: #eee; padding: 5px; border: 1px solid #bbb; border-bottom: none; text-align: center; float: left; margin-left: 40px; margin-top: -45px;">Keywords</h2>
+    <div id="keywords" style=" width:298px; height: 219px; border:1px solid #999; float: left; padding: 10px; margin-left: 40px; box-shadow: 10px 10px 15px #ddd; margin-top: -19px; overflow-y: scroll;"></div> 
 
 <script>
             document.addEventListener("DOMContentLoaded", function () {
-
+                
                 // create our popcorn instance
                 var pop = Popcorn('#youtube', {pauseOnLinkClicked:true});
                 
@@ -29,6 +26,22 @@
                     end: 288,
                     text: '<span data-begin="2">00:02 - so how does the <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">internet</a> work</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 2,
+                    end: 288,
+                    text: "<h3>Internet</h3><br />The Internet (or internet) is a global system of interconnected computer networks that use the standard Internet protocol suite (often called TCP/IP, although not all applications use TCP) to serve billions of users worldwide. It is a network of networks that consists of millions of private, public, academic, business, and government networks, of local to global scope, that are linked by a broad array of electronic, wireless and optical networking technologies. The Internet carries an extensive range of information resources and services, such as the inter-linked hypertext documents of the World Wide Web (WWW) and the infrastructure to support email.<br /><br /><a href=http://en.wikipedia.org/wiki/Internet target=blank>more..</a>",
+                    title: "Internet",
+                    target: "wikipedia",
+                    numberofwords: 100
+                });
+
+                pop.footnote({
+                    start: 2,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Internet</h3><br />The Internet (or internet) is a global system of interconnected computer networks that use the standard Internet protocol suite (often called TCP/IP, although not all applications use TCP) to serve billions of users worldwide. It is a network of networks that consists of millions of private, public, academic, business, and government networks, of local to global scope, that are linked by a broad array of electronic, wireless and optical networking technologies. The Internet carries an extensive range of information resources and services, such as the inter-linked hypertext documents of the World Wide Web (WWW) and the infrastructure to support email.<br /><br /><a href=http://en.wikipedia.org/wiki/Internet target=blank>more..</a>\';" style="font-size: 18px;">internet</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -46,6 +59,13 @@
                 });
 
                 pop.footnote({
+                    start: 8,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Electricity</h3><br />Electricity is the set of physical phenomena associated with the presence and flow of electric charge. Electricity gives a wide variety of well-known effects, such as lightning, static electricity, electromagnetic induction and the flow of electrical current. In addition, electricity permits the creation and reception of electromagnetic radiation such as radio waves.<br /><br /><a href=http://en.wikipedia.org/wiki/Electricity target=blank>more..</a>\';" style="font-size: 12px;">electricity</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 11,
                     end: 288,
                     text: '<span data-begin="11">00:11 - you use that every day but may not understand the mechanics behind it</span><br /><script>mtFx.toBottom();',
@@ -57,6 +77,13 @@
                     end: 288,
                     text: '<span data-begin="14">00:14 - and if the <a href="http://en.wikipedia.org/wiki/Electric_grid" target="_blank">electric grid</a> is difficult to understand in the <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">internet</a> must be</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 14,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Electric grid</h3><br />An electrical grid is an interconnected network for delivering electricity from suppliers to consumers. It consists of three main components: 1) power stations that produce electricity from combustible fuels (coal, natural gas, biomass) or non-combustible fuels (wind, solar, nuclear, hydro power); 2) transmission lines that carry electricity from power plants to demand centers; and 3) transformers that reduce voltage so distribution lines carry power for final delivery.<br /><br /><a href=http://en.wikipedia.org/wiki/Electric_grid target=blank>more..</a>\';" style="font-size: 12px;">electric grid</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -116,6 +143,13 @@
                 });
 
                 pop.footnote({
+                    start: 38,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Cloud computing</h3><br />Cloud computing is the use of computing resources (hardware and software) that are delivered as a service over a network (typically the Internet). The name comes from the use of a cloud-shaped symbol as an abstraction for the complex infrastructure it contains in system diagrams.<br /><br /><a href=http://en.wikipedia.org/wiki/Cloud_computing target=blank>more..</a>\';" style="font-size: 12px;">cloud computing</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 40,
                     end: 288,
                     text: '<span data-begin="40">00:40 - the whole fuzzy cloud picture was created by people more concerned about</span><br /><script>mtFx.toBottom();',
@@ -158,10 +192,24 @@
                 });
 
                 pop.footnote({
+                    start: 52,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Optical fiber</h3><br />An optical fiber (or optical fibre) is a flexible, transparent fiber made of glass (silica) or plastic, slightly thicker than a human hair. It functions as a waveguide, or “light pipe”, to transmit light between the two ends of the fiber. The field of applied science and engineering concerned with the design and application of optical fibers is known as fiber optics.<br /><br /><a href=http://en.wikipedia.org/wiki/Fiber_optics target=blank>more..</a>\';" style="font-size: 12px;">fiber optics</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 54,
                     end: 288,
                     text: '<span data-begin="54">00:54 - or occasionly beam to satelites are through <a href="http://en.wikipedia.org/wiki/Cell_phone" target="_blank">cell phone</a> networks</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 54,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Mobile phone</h3><br />A mobile phone (also known as a cellular phone, cell phone and a hand phone) is a device that can make and receive telephone calls over a radio link while moving around a wide geographic area. It does so by connecting to a cellular network provided by a mobile phone operator, allowing access to the public telephone network. By contrast, a cordless telephone is used only within the short range of a single, private base station.<br /><br /><a href=http://en.wikipedia.org/wiki/Cell_phone target=blank>more..</a>\';" style="font-size: 12px;">cell phone</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -179,6 +227,13 @@
                 });
 
                 pop.footnote({
+                    start: 61,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Computer</h3><br />A computer is a general purpose device that can be programmed to carry out a finite set of arithmetic or logical operations. Since a sequence of operations can be readily changed, the computer can solve more than one kind of problem. Conventionally, a computer consists of at least one processing element, typically a central processing unit (CPU) and some form of memory. The processing element carries out arithmetic and logic operations, and a sequencing and control unit that can change the order of operations based on stored information. Peripheral devices allow information to be retrieved from an external source, and the result of operations saved and retrieved.<br /><br /><a href=http://en.wikipedia.org/wiki/Computers target=blank>more..</a>\';" style="font-size: 16px;">computers</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 64,
                     end: 288,
                     text: '<span data-begin="64">01:04 - wire can communicate</span><br /><script>mtFx.toBottom();',
@@ -193,6 +248,13 @@
                 });
 
                 pop.footnote({
+                    start: 66,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Server</h3><br />In most common use, a server is a physical computer (a computer hardware system) dedicated to run one or more services (as a host), to serve the needs of the users of other computers on a network. Depending on the computing service that it offers it could be a database server, file server, mail server, print server, web server, gaming server, or some other kind of server.<br /><br /><a href=http://en.wikipedia.org/wiki/Server_(computing) target=blank>more..</a>\';" style="font-size: 16px;">server</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 70,
                     end: 288,
                     text: '<span data-begin="70">01:10 - and <a href="http://en.wikipedia.org/wiki/Web_pages" target="_blank">web pages</a> or files on that <a href="http://en.wikipedia.org/wiki/Server_(computing)" target="_blank">servers</a> <a href="http://en.wikipedia.org/wiki/Hard_drives" target="_blank">hard drives</a></span><br /><script>mtFx.toBottom();',
@@ -200,10 +262,31 @@
                 });
 
                 pop.footnote({
+                    start: 70,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Web page</h3><br />A web page or webpage is a document or information resource that is suitable for the World Wide Web and can be accessed through a web browser and displayed on a monitor or mobile device. This information is usually in HTML or XHTML format, and may provide navigation to other web pages via hypertext links. Web pages frequently subsume other resources such as style sheets, scripts and images into their final presentation.<br /><br /><a href=http://en.wikipedia.org/wiki/Web_pages target=blank>more..</a>\';" style="font-size: 14px;">web pages</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
+                    start: 70,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Hard disk drive</h3><br />A hard disk drive (HDD) is a data storage device used for storing and retrieving digital information using rapidly rotating discs (platters) coated with magnetic material. An HDD retains its data even when powered off. Data is read in a random-access manner, meaning individual blocks of data can be stored or retrieved in any order rather than just sequentially. An HDD consists of one or more rigid (&quot;hard&quot;) rapidly rotating discs (platters) with magnetic heads arranged on a moving actuator arm to read and write data to the surfaces.<br /><br /><a href=http://en.wikipedia.org/wiki/Hard_drives target=blank>more..</a>\';" style="font-size: 12px;">hard drives</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 74,
                     end: 288,
                     text: '<span data-begin="74">01:14 - every <a href="http://en.wikipedia.org/wiki/Server_(computing)" target="_blank">server</a> has a unique <a href="http://en.wikipedia.org/wiki/Internet_protocol_address" target="_blank">internet protocol address</a> or high p_ address</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 74,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>IP address</h3><br />An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication. An IP address serves two principal functions: host or network interface identification and location addressing. Its role has been characterized as follows: &quot;A name indicates what we seek. An address indicates where it is. A route indicates how to get there.&quot;<br /><br /><a href=http://en.wikipedia.org/wiki/Internet_protocol_address target=blank>more..</a>\';" style="font-size: 12px;">internet protocol address</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -242,6 +325,20 @@
                 });
 
                 pop.footnote({
+                    start: 89,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Google</h3><br />Google Inc. (NASDAQ: GOOG) is an American multinational corporation which provides Internet-related products and services, including internet search, cloud computing, software and advertising technologies. Advertising revenues from AdWords generate almost all of the company\\\'s profits.<br /><br /><a href=http://en.wikipedia.org/wiki/Google target=blank>more..</a>\';" style="font-size: 12px;">google</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
+                    start: 89,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Facebook</h3><br />Facebook is a social networking service launched in February 2004, owned and operated by Facebook, Inc. As of September 2012, Facebook has over one billion active users, more than half of them using Facebook on a mobile device. Users must register before using the site, after which they may create a personal profile, add other users as friends, and exchange messages, including automatic notifications when they update their profile. Additionally, users may join common-interest user groups, organized by workplace, school or college, or other characteristics, and categorize their friends into lists such as &quot;People From Work&quot; or &quot;Close Friends&quot;.<br /><br /><a href=http://en.wikipedia.org/wiki/Facebook target=blank>more..</a>\';" style="font-size: 12px;">facebook</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 95,
                     end: 288,
                     text: '<span data-begin="95">01:35 - so if this is how it works</span><br /><script>mtFx.toBottom();',
@@ -270,6 +367,13 @@
                 });
 
                 pop.footnote({
+                    start: 103,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Client</h3><br />A client is a piece of computer hardware or software that accesses a service made available by a server. The server is often (but not always) on another computer system, in which case the client accesses the service by way of a network. The term was first applied to devices that were not capable of running their own stand-alone programs, but could interact with remote computers via a network. These dumb terminals were clients of the time-sharing mainframe computer.<br /><br /><a href=http://en.wikipedia.org/wiki/Client_(computing) target=blank>more..</a>\';" style="font-size: 12px;">client</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 106,
                     end: 288,
                     text: '<span data-begin="106">01:46 - connected indirectly to the <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">internet</a> touring <a href="http://en.wikipedia.org/wiki/Internet_service_provider" target="_blank">internet service provider</a></span><br /><script>mtFx.toBottom();',
@@ -277,10 +381,24 @@
                 });
 
                 pop.footnote({
+                    start: 106,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Internet service provider</h3><br />An Internet service provider (ISP) is an organization that provides access to the Internet.<br /><br /><a href=http://en.wikipedia.org/wiki/Internet_service_provider target=blank>more..</a>\';" style="font-size: 12px;">internet service provider</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 110,
                     end: 288,
                     text: '<span data-begin="110">01:50 - here will pretend that this is my home <a href="http://en.wikipedia.org/wiki/Laptop" target="_blank">laptop</a></span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 110,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Laptop</h3><br />A laptop computer is a personal computer for mobile use. A laptop has most of the same components as a desktop computer, including a display, a keyboard, a pointing device such as a touchpad (also known as a trackpad) and/or a pointing stick, and speakers into a single unit. A laptop is powered by mains electricity via an AC adapter, and can be used away from an outlet using a rechargeable battery. Laptops are also sometimes called notebook computers, notebooks, ultrabooks or netbooks.<br /><br /><a href=http://en.wikipedia.org/wiki/Laptop target=blank>more..</a>\';" style="font-size: 12px;">laptop</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -354,6 +472,13 @@
                 });
 
                 pop.footnote({
+                    start: 133,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Email</h3><br />Electronic mail, commonly referred to as email or e-mail, is a method of exchanging digital messages from an author to one or more recipients. Modern email operates across the Internet or other computer networks. Some early email systems required that the author and the recipient both be online at the same time, in common with instant messaging. Today\\\'s email systems are based on a store-and-forward model. Email servers accept, forward, deliver and store messages. Neither the users nor their computers are required to be online simultaneously; they need connect only briefly, typically to an email server, for as long as it takes to send or receive messages.<br /><br /><a href=http://en.wikipedia.org/wiki/Email target=blank>more..</a>\';" style="font-size: 12px;">email</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 137,
                     end: 288,
                     text: '<span data-begin="137">02:17 - and ruth has they\'ll well <a href="http://en.wikipedia.org/wiki/Dial-up" target="_blank">dial-up</a> from home and i\'ve got a <a href="http://en.wikipedia.org/wiki/gmail" target="_blank">gmail</a> account</span><br /><script>mtFx.toBottom();',
@@ -361,10 +486,31 @@
                 });
 
                 pop.footnote({
+                    start: 137,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Dial-up Internet access</h3><br />Dial-up Internet access is a form of Internet access that uses the facilities of the public switched telephone network (PSTN) to establish a dialed connection to an Internet service provider (ISP) via telephone lines. The user\\\'s computer or router uses an attached modem to encode and decode Internet Protocol packets and control information into and from analogue audio frequency signals, respectively.<br /><br /><a href=http://en.wikipedia.org/wiki/Dial-up target=blank>more..</a>\';" style="font-size: 12px;">dial-up</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
+                    start: 137,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Gmail</h3><br />Gmail is a free, advertising-supported email service provided by Google. Users may access Gmail as secure webmail, as well as via POP3 or IMAP4 protocols. Gmail was launched as an invitation-only beta release on April 1, 2004 and it became available to the general public on February 7, 2007, though still in beta status at that time. The service was upgraded from beta status on July 7, 2009, along with the rest of the Google Apps suite.<br /><br /><a href=http://en.wikipedia.org/wiki/Gmail target=blank>more..</a>\';" style="font-size: 12px;">gmail</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 142,
                     end: 288,
                     text: '<span data-begin="142">02:22 - i log onto <a href="http://en.wikipedia.org/wiki/gmail" target="_blank">gmail</a> dot com and compose a message to add roots <a href="http://en.wikipedia.org/wiki/Email_address" target="_blank">email address</a> and</span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 142,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Email address</h3><br />An email address identifies an email box to which email messages are delivered. This article covers modern internet email, but many earlier email systems used different address formats.<br /><br /><a href=http://en.wikipedia.org/wiki/Email_address target=blank>more..</a>\';" style="font-size: 12px;">email address</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -452,6 +598,13 @@
                 });
 
                 pop.footnote({
+                    start: 182,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Online</h3><br />The terms &quot;online&quot; and &quot;offline&quot; (also stylized as &quot;on-line&quot; and &quot;off-line&quot;) have specific meanings in regard to computer technology and telecommunications. In general, &quot;online&quot; indicates a state of connectivity, while &quot;offline&quot; indicates a disconnected state.<br /><br /><a href=http://en.wikipedia.org/wiki/Online target=blank>more..</a>\';" style="font-size: 12px;">online</a><br />',
+                    target: "keywords"
+                });
+
+                pop.footnote({
                     start: 184,
                     end: 288,
                     text: '<span data-begin="184">03:04 - your boss is doing market research and your updating your face book profile</span><br /><script>mtFx.toBottom();',
@@ -491,6 +644,13 @@
                     end: 288,
                     text: '<span data-begin="199">03:19 - the solution to that problem is ita dresses and <a href="http://en.wikipedia.org/wiki/Router_(computing)" target="_blank">routers</a></span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 199,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Router</h3><br />A router is a device that forwards data packets between computer networks, creating an overlay internetwork. A router is connected to two or more data lines from different networks. When a data packet comes in one of the lines, the router reads the address information in the packet to determine its ultimate destination. Then, using information in its routing table or routing policy, it directs the packet to the next network on its journey. Routers perform the &quot;traffic directing&quot; functions on the Internet. A data packet is typically forwarded from one router to another through the networks that constitute the internetwork until it gets to its destination node.<br /><br /><a href=http://en.wikipedia.org/wiki/Router_(computing) target=blank>more..</a>\';" style="font-size: 14px;">router</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -561,6 +721,13 @@
                     end: 288,
                     text: '<span data-begin="227">03:47 - every time you visit a <a href="http://en.wikipedia.org/wiki/Website" target="_blank">website</a></span><br /><script>mtFx.toBottom();',
                     target: "footnote"
+                });
+
+                pop.footnote({
+                    start: 227,
+                    end: 288,
+                    text: '<a href="#" onClick="document.getElementById(\'wikipedia\').innerHTML = \'<h3>Website</h3><br />A website, also written as Web site, web site, or simply site, is a set of related web pages containing content such as text, images, video, audio, etc. A website is hosted on at least one web server, accessible via a network such as the Internet or a private local area network through an Internet address known as a Uniform Resource Locator. All publicly accessible websites collectively constitute the World Wide Web.<br /><br /><a href=http://en.wikipedia.org/wiki/Website target=blank>more..</a>\';" style="font-size: 12px;">website</a><br />',
+                    target: "keywords"
                 });
 
                 pop.footnote({
@@ -703,47 +870,16 @@
                     target: "footnote"
                 });
 
-                pop.wikipedia({
-                    start: 3,
-                    end: 9,
-                    src: "http://en.wikipedia.org/wiki/Internet",
-                    title: "Internet",
-                    target: "wikipedia",
-                    numberofwords: 100
-                });
-
-                pop.wikipedia({
-                    start: 9,
-                    end: 11,
-                    src: "http://en.wikipedia.org/wiki/Electricity",
-                    title: "Electricity",
-                    target: "wikipedia",
-                    numberofwords: 100
-                });
-
-                pop.wikipedia({
-                    start: 11,
-                    end: 15,
-                    src: "http://en.wikipedia.org/wiki/Mechanics",
-                    title: "Mechanics",
-                    target: "wikipedia",
-                    numberofwords: 100
-                });
-
-                pop.wikipedia({
-                    start: 15,
-                    end: 288,
-                    src: "http://en.wikipedia.org/wiki/Internet",
-                    title: "Internet",
-                    target: "wikipedia",
-                    numberofwords: 100
-                });
-
             }, false);
 
             var easy = new EasyCaptions({
                 videoElementID: "youtube",
                 transcriptElementID: "footnote"
+            });
+
+            var easy2 = new EasyCaptions({
+                videoElementID: "youtube",
+                transcriptElementID: "keywords"
             });
 
             (function () {
@@ -760,4 +896,21 @@
                 setInterval(detectChange, 200); //Checks each 200ms = 5 times a second
             })();
 
+            (function () {
+                var element = document.getElementById("keywords");
+                var lastHeight = element.scrollHeight;
+                function detectChange() {
+                    var currentHeight = element.scrollHeight;
+                    if (lastHeight != currentHeight) {
+                        element.scrollTop = currentHeight;
+                        lastHeight = currentHeight;
+                    }
+                }
+                detectChange();
+                setInterval(detectChange, 200); //Checks each 200ms = 5 times a second
+            })();
+
+            
+
        </script>
+
